@@ -1,22 +1,23 @@
-
+#Imports
 
 import csv
 import os
 
-# Script for CSV path
+#Path Connection
+
 csv_path = os.path.join("/Users/jennyposso/Downloads/module 3/PyBank/Resources/budget_data.csv")
 
 with open(csv_path) as csvfile:
-    csvreader = csv.reader(csvfile, delimiter=',')
+    csvread = csv.reader(csvfile, delimiter=',')
     print(csvreader)
-    csv_header = next(csvreader)
+    csv_header = next(csvread)
     print(f"CSV Header: {csv_header}")
     for row in csvreader:
-        print(row)
+    print(row)
 
 # Total months
 with open(csv_path, 'r') as fp:
-    lines = sum(1 for line in fp) - 1
+lines = sum(1 for line in fp) - 1
 
 # Total Profit/Losses
 greatest_increase = ["", 0]
